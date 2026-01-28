@@ -1,118 +1,107 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-const Privacy = () => {
+import { Layout } from "@/components/Layout";
+import { Shield, Lock, Eye, Server, Trash2, Bell, Globe, FileText, Gavel, Database, Wifi } from "lucide-react";
+
+const sections = [
+  {
+    icon: FileText,
+    title: "Effective Date",
+    content: `This Privacy Policy is effective as of April 1, 2026 and applies to all users of the Word of the Day – Vocabulary Builder mobile application (the \"App\"). By using the App, you agree to the collection and use of information in accordance with this policy.`,
+  },
+  {
+    icon: Lock,
+    title: "Information We Collect",
+    content: `Word of the Day is built with a privacy‑first architecture. We do not require account registration and we do not collect personally identifiable information such as name, email address, phone number, precise location, IP address, or device identifiers. All vocabulary history, favorites, streaks, quiz progress, and preferences are stored locally on your device only.`,
+  },
+  {
+    icon: Eye,
+    title: "Use of Information",
+    content: `Data generated within the App (including saved words, quiz results, streaks, and preferences) is used solely to provide core functionality of the service. We do not use your data for advertising, profiling, behavioral analysis, resale, or marketing purposes.`,
+  },
+  {
+    icon: Server,
+    title: "Third‑Party Services & Data Sharing",
+    content: `The App accesses the internet only to retrieve daily vocabulary content and related linguistic information. We do not integrate advertising SDKs, analytics trackers, fingerprinting tools, or data brokerage services. No personal user data is transmitted to our servers or shared with third parties.`,
+  },
+  {
+    icon: Wifi,
+    title: "Offline Use & Cached Data",
+    content: `Word of the Day supports offline access. Previously viewed words, favorites, and learning history are cached locally on your device so they remain available without an internet connection. Cached data never leaves your device unless you explicitly export or share it using your operating system’s tools.`,
+  },
+  {
+    icon: Bell,
+    title: "Notifications Permission",
+    content: `If you enable reminders, the App may request notification permission to send local alerts reminding you to view your daily word. These notifications are optional and can be disabled at any time through your device settings. No notification data is transmitted externally.`,
+  },
+  {
+    icon: Database,
+    title: "Permissions Breakdown",
+    content: `The App requests only the minimum permissions required to function: (1) Internet Access – to fetch the daily word and related content. (2) Notifications – to deliver optional daily reminders. The App does not request access to contacts, location, camera, microphone, storage, or device identifiers.`,
+  },
+  {
+    icon: Trash2,
+    title: "Data Storage & Deletion",
+    content: `All application data is stored locally on your device. You may delete your saved words, history, and preferences at any time from within the App. Uninstalling the App permanently removes all stored data from your device. We do not maintain server‑side backups of personal data.`,
+  },
+  {
+    icon: Gavel,
+    title: "GDPR & CCPA Compliance",
+    content: `For users in the European Economic Area (GDPR) and California (CCPA), you have the right to access, correct, delete, or restrict the use of your personal data. Because Word of the Day does not collect or process personally identifiable information on external servers, most requests are fulfilled by managing data locally within the App. You may delete all data at any time through the App or by uninstalling it. We do not sell personal information as defined by the CCPA.`,
+  },
+  {
+    icon: Globe,
+    title: "Children’s Privacy",
+    content: `Word of the Day is intended for general audiences. We do not knowingly collect personal information from children under the age of 13. As no accounts or personal identifiers are collected, children may use the App safely under parental guidance.`,
+  },
+];
+
+export default function PrivacyPage() {
   return (
-    <div className="min-h-screen py-12 lg:py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <Button asChild variant="ghost" className="mb-6 -ml-2">
-            <Link to="/">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-          </Button>
-
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Privacy Policy
-          </h1>
-          <p className="text-muted-foreground mb-8">
-            Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
-          </p>
-
-          <div className="prose prose-slate dark:prose-invert max-w-none">
-            <div className="space-y-8">
-              <section className="bg-card border border-border rounded-xl p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Introduction</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  At Word of the Day, we take your privacy seriously. This Privacy Policy explains how we 
-                  collect, use, and protect your information when you use our website and services. We are 
-                  committed to ensuring that your privacy is protected.
-                </p>
-              </section>
-
-              <section className="bg-card border border-border rounded-xl p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Information We Collect</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>We may collect the following types of information:</p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>
-                      <strong className="text-foreground">Contact Information:</strong> When you use our contact form, 
-                      we collect your name, email address, and message content.
-                    </li>
-                    <li>
-                      <strong className="text-foreground">Usage Data:</strong> We may collect anonymous usage data to 
-                      improve our service, including pages visited and features used.
-                    </li>
-                    <li>
-                      <strong className="text-foreground">Cookies:</strong> We use essential cookies to ensure the 
-                      website functions properly and to remember your preferences (such as dark mode).
-                    </li>
-                  </ul>
-                </div>
-              </section>
-
-              <section className="bg-card border border-border rounded-xl p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground mb-4">How We Use Your Information</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>We use the information we collect to:</p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Respond to your inquiries and provide customer support</li>
-                    <li>Improve and personalize your experience on our website</li>
-                    <li>Analyze how our service is used to make improvements</li>
-                    <li>Send you updates about our service (only if you opt in)</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section className="bg-card border border-border rounded-xl p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Data Protection</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  We implement appropriate security measures to protect your personal information against 
-                  unauthorized access, alteration, disclosure, or destruction. However, no method of 
-                  transmission over the Internet is 100% secure, and we cannot guarantee absolute security.
-                </p>
-              </section>
-
-              <section className="bg-card border border-border rounded-xl p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Third-Party Services</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  We do not sell, trade, or otherwise transfer your personal information to third parties. 
-                  We may use trusted third-party services to help us operate our website, but these parties 
-                  are required to keep your information confidential.
-                </p>
-              </section>
-
-              <section className="bg-card border border-border rounded-xl p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Your Rights</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>You have the right to:</p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Access the personal information we hold about you</li>
-                    <li>Request correction of any inaccurate information</li>
-                    <li>Request deletion of your personal information</li>
-                    <li>Opt out of any marketing communications</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section className="bg-card border border-border rounded-xl p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Contact Us</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  If you have any questions about this Privacy Policy, please contact us at{" "}
-                  <a href="mailto:xiangdee2@gmail.com" className="text-primary hover:underline">
-                    xiangdee2@gmail.com
-                  </a>
-                  .
-                </p>
-              </section>
-            </div>
+    <Layout>
+      {/* Hero */}
+      <section className="pt-2 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-hero" />
+        <div className="container mx-auto px-4 relative z-10 max-w-3xl text-center">
+          <div className="w-20 h-20 mx-auto rounded-2xl gradient-dawn flex items-center justify-center mb-8 shadow-soft">
+            <Shield className="w-10 h-10 text-primary-foreground" />
           </div>
+          <h1 className="font-display text-5xl font-bold mb-6">Privacy Policy</h1>
+          <p className="text-lg text-muted-foreground">
+            This Privacy Policy explains how Word of the Day – Vocabulary Builder collects, uses, and protects your information.
+          </p>
         </div>
-      </div>
-    </div>
-  );
-};
+      </section>
 
-export default Privacy;
+      {/* Policy Sections */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-4xl space-y-8">
+          {sections.map((s) => (
+            <div key={s.title} className="bg-card rounded-2xl p-8 shadow-card border">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <s.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="font-display text-xl font-semibold">{s.title}</h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">{s.content}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Changes & Contact */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <FileText className="w-10 h-10 mx-auto mb-4 text-primary" />
+          <h2 className="font-display text-2xl font-bold mb-4">Changes to This Policy</h2>
+          <p className="text-muted-foreground mb-6">
+            We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised effective date. Continued use of the App after updates constitutes acceptance of the revised policy.
+          </p>
+          <p className="text-muted-foreground">
+            For questions regarding this policy, contact us at <span className="text-primary">support@wordofday.app</span>.
+          </p>
+        </div>
+      </section>
+    </Layout>
+  );
+}
